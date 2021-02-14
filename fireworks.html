@@ -7,7 +7,7 @@
     <meta name="Keywords" content="" />
     <meta name="Description" content="" />
     <style>
-      body: {
+      body {
         padding: 0;
       }
 
@@ -26,10 +26,25 @@
   </head>
 
   <body>
+    <audio
+      id="audio"
+      style="display: none;"
+      controls
+      src="./music/zhuiguangzhe.mp3"
+    ></audio>
+    <!-- <iframe allow="autoplay" src="./music/zhuiguangzhe.mp3"></iframe> -->
     <div class="txt">蓉蓉,节日快乐!</div>
     <canvas id="canvas"></canvas>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script>
+      document.addEventListener("touchstart", function () {
+        function audioAutoPlay() {
+          var audio = document.getElementById("audio");
+          audio.play();
+        }
+        audioAutoPlay();
+      });
+
       $(function () {
         var canvas = $("#canvas")[0];
         canvas.width = $(window).width();
